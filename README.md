@@ -3,7 +3,7 @@
 Token Viz is a project that utilizes FastAPI, Hugging Face, and basic HTML, JS, and CSS to visually demonstrate tokenization.
 
 
-![Token Viz](/token-viz/images/snapshot.png)
+![Token Viz](/images/snapshot.png)
 
 ## Installation
 
