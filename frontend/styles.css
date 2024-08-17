@@ -1,0 +1,140 @@
+body {
+    font-family: 'Inter', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.75;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+h1, h2 {
+    color: #222;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+#tokenized-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#tokenized-title .token {
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#input-area {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 0px;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+select, button {
+    font-family: 'Inter', sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+button:hover, select:hover {
+    background-color: #e9ecef;
+}
+
+#token-display {
+    line-height: 2;
+    word-break: break-all;
+    margin-top: 20px;
+}
+
+.token {
+    display: inline-block;
+    padding: 4px 6px;
+    border-radius: 6px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    font-family: monospace;
+    white-space: pre;
+    position: relative;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.token:hover {
+    transform: scale(1.05);
+}
+
+.token:hover::after {
+    content: attr(data-original);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.explainer {
+    background-color: #eef2f7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 2px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#token-count {
+    font-size: 0.85em;
+    color: #666;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

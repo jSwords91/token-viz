@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokeniz Visualizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="tokenized-title">
+        <span class="token" style="background-color: #FFB3BA;">Token</span>
+        <span class="token" style="background-color: #BAFFC9;">Visual</span>
+        <span class="token" style="background-color: #BAE1FF;">izer</span>
+    </div>
+    <div id="controls">
+        <select id="tokenizer-select">
+            <option value="gpt2">GPT-2</option>
+            <option value="bert-base-uncased">BERT (uncased)</option>
+            <option value="roberta-base">RoBERTa</option>
+            <option value="t5-small">T5</option>
+            <option value="xlnet-base-cased">XLNet</option>
+        </select>
+        <button id="clear-btn">Clear</button>
+    </div>
+    <div id="input-container" style="position: relative;">
+        <textarea id="input-area" placeholder="Type your text here..."></textarea>
+        <div id="token-count"
+            style="position: absolute; top: 5px; right: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 2px 5px; border-radius: 3px;">
+        </div>
+    </div>
+    <div id="token-display"></div>
+    <div id="token-count"></div>
+    <div id="error-message"></div>
+
+    <div class="explainer">
+        <h2>What is Tokenization?</h2>
+
+        <p>Tokenization breaks text into smaller units called <strong>tokens</strong>. These can be words, subwords, or characters. For example, "Tokenization" might be split into "Token", "ization", or "Tok", "en", "iz", "ation" depending on the tokenizer.</p>
+
+        <p>Typically, one token corresponds to ~4 characters of English text, so 100 tokens roughly equate to 75 words.</p>
+
+        <h2>Why is Tokenization Important?</h2>
+        <p>Tokenization shapes how models process and understand text. It influences:</p>
+        <ul>
+            <li><strong>Vocabulary Size:</strong> The number of unique tokens affects model complexity.</li>
+            <li><strong>Context Window:</strong> The amount of text a model can consider at once, measured in tokens.</li>
+            <li><strong>Handling of Complex Tasks:</strong> For example, in math, a tokenizer that splits "12345" into "12", "345" might confuse the model, reducing accuracy.</li>
+        </ul>
+
+        <h2>Implications for LLMs</h2>
+        <p>The choice of tokenizer impacts various aspects:</p>
+        <ul>
+            <li><strong>Out-of-Vocabulary Handling:</strong> Subword tokenization helps with unseen words but might lead to odd splits, like "un", "seen".</li>
+            <li><strong>Math and Code Understanding:</strong> Incorrect tokenization of numbers ("3.14" split into "3", ".", "14") or code ("print(", split) can hinder performance in these tasks.</li>
+            <li><strong>Context Limitations:</strong> More tokens mean the model might truncate the text, losing context.</li>
+        </ul>
+
+        <h2>Limitations</h2>
+        <p>Tokenization has trade-offs:</p>
+        <ul>
+            <li><strong>Semantic Loss:</strong> Splitting words can disrupt meaning, especially in technical terms or names.</li>
+            <li><strong>Increased Token Count:</strong> Subword tokenization often leads to longer sequences, reducing the effective context window.</li>
+            <li><strong>Bias:</strong> Frequent tokens in training data can introduce biases in how the model interprets certain phrases.</li>
+        </ul>
+    </div>
+    <footer>
+        <p>Created by <a href="https://uk.linkedin.com/in/joshua-swords" target="_blank">Josh Swords</a></a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
